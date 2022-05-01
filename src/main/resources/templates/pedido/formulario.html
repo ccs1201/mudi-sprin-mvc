@@ -1,0 +1,56 @@
+<html>
+
+<!-- INSERE O HEAD E STYLES -->
+<head th:replace="~{base :: head}"/>
+
+	<body>
+	
+	<!-- INSERE A LOGO -->
+	<div th:replace="~{base :: topoPage}"></div>
+	
+		<div class="container">
+		
+			<!-- INSERE O TITULO -->
+			<div th:replace="~{base :: titulo('Novo Pedido')}" > </div>
+			
+			<!-- INSERE O MENU DE NAVEGAÇÃO -->
+			<nav th:replace="~{base :: menu}"></nav>
+			<div class="card">
+				<form action="/pedido/novo" method="post" th:object="${requisicaoDTO}" class="card-body">
+					<div class="form-group">
+						<label for="nomeProduto">Produto</label> 
+						<input th:field="*{nomeProduto}" th:errorclass="is-invalid" class="form-control" placeholder="Nome do Produto" type="text" /> 
+						<small>Inforne o nome do Produto.</small>
+						<div th:errors="*{nomeProduto}" class="invalid-feedback"></div>
+						
+					</div>
+		
+					<div class="form-group">
+						<label for="urlProduto">Url Produto</label> 
+						<input th:field="*{urlProduto}"	th:errorclass="is-invalid" class="form-control" placeholder="URL do Produto" />
+						<small>Cole a url do produto</small>
+						<div th:errors="*{urlProduto}"  class="invalid-feedback"></div>
+					</div>
+					
+					<div class="form-group">
+						<label for="urlImagem">Imagem Produto</label> 
+						<input th:field="*{urlImagem}"	th:errorclass="is-invalid" class="form-control" placeholder="Url Imagem do Produto"  /> 
+						<small>Cole a url da imagem do produto.</small>
+						<div th:errors="*{urlImagem}" class="invalid-feedback"></div>
+					</div>
+					
+					<div class="form-group">
+						<label for="desscricao">Descrição </label>
+						<textarea th:field= "*{descricao}" th:errorclass="is-invalid" class="form-control" 
+							placeholder="Informe a descrição e detalhes que você deseja para falicitar a procura pelo comprador." > </textarea>
+							<div th:errors="*{descricao}"  class="invalid-feedback"></div>
+					</div>
+					
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
+		
+				</form>
+			</div>
+		</div>
+	
+	</body>
+	</html>
