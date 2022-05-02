@@ -1,13 +1,12 @@
-package br.com.alura.spring.mvc.mudi.respository;
+package br.com.ccs.mudi.respository;
 
+import br.com.ccs.mudi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import br.com.alura.spring.mvc.mudi.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	public User findByUsername(String username);
+    User findByUsername(String username);
 
 }

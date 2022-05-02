@@ -1,4 +1,4 @@
-package br.com.alura.spring.mvc.mudi.model;
+package br.com.ccs.mudi.model;
 
 public enum StatusPedido {
 	

@@ -1,9 +1,9 @@
-package br.com.alura.spring.mvc.mudi.dto;
+package br.com.ccs.mudi.dto;
 
 import javax.validation.constraints.NotBlank;
 
-import br.com.alura.spring.mvc.mudi.model.Pedido;
-import br.com.alura.spring.mvc.mudi.model.StatusPedido;
+import br.com.ccs.mudi.model.Pedido;
+import br.com.ccs.mudi.model.StatusPedido;
 
 public class RequisicaoDTO {
 

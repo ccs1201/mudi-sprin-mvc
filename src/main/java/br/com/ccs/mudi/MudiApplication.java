@@ -1,4 +1,4 @@
-package br.com.alura.spring.mvc.mudi;
+package br.com.ccs.mudi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

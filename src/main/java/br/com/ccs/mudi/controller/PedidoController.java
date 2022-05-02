@@ -1,30 +1,30 @@
-package br.com.alura.spring.mvc.mudi.controller;
+package br.com.ccs.mudi.controller;
 
 import java.security.Principal;
 
 import javax.validation.Valid;
 
+import br.com.ccs.mudi.respository.PedidoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.alura.spring.mvc.mudi.dto.RequisicaoDTO;
-import br.com.alura.spring.mvc.mudi.model.Pedido;
-import br.com.alura.spring.mvc.mudi.model.User;
-import br.com.alura.spring.mvc.mudi.respository.PedidoRepository;
-import br.com.alura.spring.mvc.mudi.respository.UserRepository;
+import br.com.ccs.mudi.dto.RequisicaoDTO;
+import br.com.ccs.mudi.model.Pedido;
+import br.com.ccs.mudi.model.User;
+import br.com.ccs.mudi.respository.UserRepository;
 
 @Controller
 @RequestMapping("pedido")
 public class PedidoController {
 
 	
-	private PedidoRepository repository;
+	private final PedidoRepository repository;
 	
 	
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
 	
 	PedidoController(PedidoRepository repository, UserRepository userRepository){
 		this.repository =  repository;
@@ -38,7 +38,7 @@ public class PedidoController {
 	}
 
 	@PostMapping("novo")
-	public String novoPedido(@Valid RequisicaoDTO requisição, BindingResult result, Principal principal) {
+	public String novoPedido(@Valid RequisicaoDTO requisicaoDTO, BindingResult result, Principal principal) {
 
 		if (result.hasErrors()) {
 			return "pedido/formulario";
@@ -46,7 +46,7 @@ public class PedidoController {
 		
 		User user = userRepository.findByUsername(principal.getName());
 
-		Pedido pedido = requisição.toPedido();
+		Pedido pedido = requisicaoDTO.toPedido();
 		pedido.setUser(user);
 
 		repository.save(pedido);

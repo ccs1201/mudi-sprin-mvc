@@ -1,8 +1,9 @@
-package br.com.alura.spring.mvc.mudi.controller;
+package br.com.ccs.mudi.controller;
 
 import java.security.Principal;
 import java.util.Collection;
 
+import br.com.ccs.mudi.respository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.alura.spring.mvc.mudi.model.Pedido;
-import br.com.alura.spring.mvc.mudi.model.StatusPedido;
-import br.com.alura.spring.mvc.mudi.respository.PedidoRepository;
+import br.com.ccs.mudi.model.Pedido;
+import br.com.ccs.mudi.model.StatusPedido;
 
 @Controller
 @RequestMapping("/home")

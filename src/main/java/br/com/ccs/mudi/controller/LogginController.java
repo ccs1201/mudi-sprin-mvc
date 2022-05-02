@@ -1,4 +1,4 @@
-package br.com.alura.spring.mvc.mudi.controller;
+package br.com.ccs.mudi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
